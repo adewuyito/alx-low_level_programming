@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	char str[];
+	char str[80];
 
 	strcpy(str, "Programming is like building a multilingual puzzle\n");
 	puts(str);
