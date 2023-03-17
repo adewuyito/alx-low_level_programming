@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <time.h>
-#include <sring.h>
 #include <stdlib.h>
 
 /**
