@@ -2,7 +2,7 @@
 
 /**
  * print_sign - Print the sign of numb
- * @n: The int to cck
+ * @n: The int to cck for sign value
  * Return: 1 for positive num, -1 for negative num and anything else
  */
 
