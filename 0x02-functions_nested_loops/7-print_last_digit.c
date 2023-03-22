@@ -10,18 +10,11 @@ int print_last_digit(int n)
 {
 	int last;
 
-	if (n < 0)
+	last = c % 10;
+	if (last < 0)
 	{
-		int con;
-
-		con = n * -1;
-		last = con;
+		last = last * -1;
 	}
-	else
-	{
-		last = n;
-	}
-	last = last % 10;
 	_putchar(last + '0');
 
 	return (last);
