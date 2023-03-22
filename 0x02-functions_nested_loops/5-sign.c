@@ -2,8 +2,8 @@
 
 /**
  * print_sign - Print the sign of numb
- * @c: The int to cck
- * Return: 1 for +, -1 for -
+ * @n: The int to cck
+ * Return: 1 for positive num, -1 for negative num and anything else
  */
 
 int print_sign(int n)
