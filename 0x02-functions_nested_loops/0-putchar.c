@@ -18,5 +18,5 @@ int main(void)
 	_putchar('\n');
 
 
-	return (O);
+	return 0;
 }
