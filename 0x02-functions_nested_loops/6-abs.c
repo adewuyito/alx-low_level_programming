@@ -5,7 +5,7 @@
  * @c: number to be checked
  * Return: Always 0
  */
-int _abs(int c);
+int _abs(int c)
 {
 	if (c < 0)
 	{
