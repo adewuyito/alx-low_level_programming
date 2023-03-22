@@ -26,7 +26,7 @@ void print_to_98(int c)
 		{
 		user_input == 98 ? printf("%d", (user_input)) : printf("%d, ", (user_input));
 			user_input--;
-			printf("\n");
 		}
+			printf("\n");
 	}
 }
