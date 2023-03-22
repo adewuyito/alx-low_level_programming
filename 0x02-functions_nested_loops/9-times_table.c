@@ -8,30 +8,34 @@
 
 void times_table(void)
 {
-	int i, j, k, tens_digit, ones_digit;
+	int x, y, z, units_digit, tens_digit;
 	int space = 32;
 
-	for (i = 0; i < 10; i++)
+	for (x = 0; x < 10; x++)
 	{
-		_putchar(48);
-		_putchar(',');
-		for (j = 1; j < 10; j++)
+		for (y = 0; y < 10; y++)
 		{
-			k = i * j;
-			if (k < 10)
+			z = x * y;
+			if (z > 9)
 			{
+				units_digit = z % 10;
+				tens_digit = (z - units_digit) / 10;
+				_putchar(44);
 				_putchar(space);
-				_putchar(space);
+				_putchar(tens_digit + '0');
+				_putchar(units_digit + '0');
 			}
 			else
 			{
-				_putchar(space);
-				tens_digit = k / 10;
-				_putchar(tens_digit + '0');
+				if (y != 0)
+				{
+					_putchar(44);
+					_putchar(space);
+					_putchar(space);
+				}
+				_putchar(z + '0');
+
 			}
-			ones_digit = k % 10;
-			_putchar(ones_digit + '0');
-			_putchar(',');
 		}
 		_putchar('\n');
 	}
