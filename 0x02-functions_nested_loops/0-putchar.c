@@ -1,28 +1,22 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * main - Entry point
  *
- * Return: Always 0 (Success)
+ * Return: Always 0
  */
-int ptintPut();
 
 int main(void)
 {
-	printPut();
-	
-	return (0);
-}
+	int c;
+	char string[] = "_putchar";
 
-
-int printPut(void)
-{
-	int i;
-        char string[8] = "\_putchar";
-
-        for (i = 0; i <= 8; i++)
+	for (c = 0; c <= 8; c++)
 	{
-		_putchar(i);
+		_putchar(string[c]);
 	}
 	_putchar('\n');
+
+
+	return (O);
 }
