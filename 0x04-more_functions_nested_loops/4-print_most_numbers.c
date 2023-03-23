@@ -8,8 +8,9 @@
 
 void print_most_numbers(void)
 {
-	int count = 0;
+	int count;
 
+	count = 0;
 	while (count != 10)
 	{
 		if (count == 2 || count == 4)
@@ -22,5 +23,5 @@ void print_most_numbers(void)
 		++count;
 		}
 	}
-	_putchar('\n');)
+	_putchar('\n');
 }
