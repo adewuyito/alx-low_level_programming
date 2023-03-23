@@ -8,14 +8,23 @@
 
 void print_square(int size)
 {
-	int i, j;
+	int i, j, step;
 	int hash;
 
 	hash = 35;
 
-	for (i = 0; i < size; i++)
+	if (size <= 0)
 	{
-		for (j = 0; j < size; j++)
+		step = 0;
+		_putchar('\n');
+	}
+	else
+	{
+		step = size;
+	}
+	for (i = 1; i <= step; i++)
+	{
+		for (j = 1; j <= step; j++)
 		{
 			_putchar(hash);
 		}
