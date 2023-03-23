@@ -6,7 +6,7 @@
  * Return: Void
  */
 
-void print_number(void)
+void print_numbers(void)
 {
 	int count;
 
