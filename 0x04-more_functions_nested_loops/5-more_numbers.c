@@ -10,7 +10,7 @@ void more_numbers(void)
 {
 	int repetition, tents, units;
 
-	repetition = 0;
+	repetition = 1;
 	while (repetition <= 10)
 	{
 		int count;
