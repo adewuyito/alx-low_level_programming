@@ -20,8 +20,9 @@ i++;
 }
 else
 {
-_putchar(str[i]);
+_putchar(str[i] + '0');
 i++;
 }
-} 
+}
+_putchar('\n');
 }
