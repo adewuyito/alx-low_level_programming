@@ -3,7 +3,7 @@
 /**
  * _strlen - Gets the lentg of a string
  * @s: The string to check
- * return: The lenght of string
+ * Return: The lenght of string
  */
 
 int _strlen(char *s)
