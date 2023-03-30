@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- *
- *
- *
+ * _strcat - concatinates a string with another
+ * @dest: first string to join too
+ * src: string to coppy
+ * Return: dest
  */
 
 char *_strcat(char *dest, char *src)
