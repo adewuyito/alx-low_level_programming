@@ -3,7 +3,7 @@
 /**
  * _strcat - concatinates a string with another
  * @dest: first string to join too
- * @src: string to coppy
+ * @ src: string to coppy
  * Return: dest
  */
 
@@ -16,7 +16,7 @@ char *_strcat(char *dest, char *src)
 	{
 		count++;
 	}
-	for (i = 0; src[i] != '\0'; i++;)
+	for (i = 0; src[i] != '\0'; i++)
 	{
 		dest[count] = src[i];
 		count++;
