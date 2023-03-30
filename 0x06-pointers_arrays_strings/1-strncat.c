@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strcat - concatinates a string with another
+ * _strncat - concatinates a string with another
  * @dest: first string to join too
  * @src: string to coppy
  * @n: index to search
