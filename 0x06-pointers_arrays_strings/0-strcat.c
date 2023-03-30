@@ -3,7 +3,7 @@
 /**
  * _strcat - concatinates a string with another
  * @dest: first string to join too
- * src: string to coppy
+ * @src: string to coppy
  * Return: dest
  */
 
