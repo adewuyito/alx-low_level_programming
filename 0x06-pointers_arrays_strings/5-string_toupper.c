@@ -1,4 +1,4 @@
-#include <main.c>
+#include "main.h"
 
 /**
  * string_toupper - changes a string to all upper
