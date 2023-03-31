@@ -1,4 +1,4 @@
-#include "mian.h"
+#include "main.h"
 
 /**
  * _strncpy - copies a string
@@ -8,19 +8,21 @@
  * Return: Copied String
  */
 
-char *_strncpy(char *dest, const char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-	char *ret;
+	char* ret = dest;
 
-	*ret = dest;
 	while (n && (*dest++ = *src++))
 	{
 		n--;
 	}
 
-	while (n--)
+	if (n)
 	{
-		*dest++ = '\0';
+		while (--n)
+		{
+			*dest++ = '\0';
+		}
 	}
 
 	return (ret);
