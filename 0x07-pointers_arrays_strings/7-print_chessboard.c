@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_chessboard(char (*a)[8]) - Prints out the chess board
+ * print_chessboard - Prints out the chess board
  * @a: Pointer to the chess
  * Return: Void
  */
