@@ -16,9 +16,10 @@ unsigned int _strspn(char *s, char *accept)
 	count = 0;
 	while (*s)
 	{
-		match = 0;
+		char *a;
 
-		for (char *a = accept; *a; a++)
+		match = 0;
+		for (a = accept; *a; a++)
 		{
 			if (*s == *a)
 			{
