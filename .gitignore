@@ -1,2 +1,3 @@
 # Remove all main.c from adding up
-0x02-functions_nested_loops/*main.c
+**/*main.c
+_putchar.c
