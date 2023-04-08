@@ -1,3 +1,4 @@
 # Remove all main.c from adding up
 **/*main.c
 _putchar.c
+*.o
