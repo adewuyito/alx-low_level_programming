@@ -37,6 +37,11 @@ int sum_args(int argc, char *argv[])
 	int sum, i;
 
 	sum = 0;
+	if (argc == 1)
+	{
+		printf("Error\n");
+		return (0);
+	}
 	for (i = 1; i < argc; i++)
 	{
 		int j;
@@ -48,7 +53,7 @@ int sum_args(int argc, char *argv[])
 			{
 				printf("Error\n");
 
-				return (0);
+				return (1);
 			}
 			j++;
 		}
