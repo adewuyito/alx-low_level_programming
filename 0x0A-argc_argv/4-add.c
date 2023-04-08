@@ -20,13 +20,12 @@ int main(int argc, char *argv[])
 	if (argc == 1)
 	{
 		printf("Error\n");
-		break;
+		return (0);
 	}
 	if (sum != 0)
 	{
 		printf("%d\n", sum);
 	}
-
 	return (0);
 }
 
