@@ -1,18 +1,20 @@
-#include <stdio.h>
-#include <string.h>
+#include "main.h"
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * _puts - Prints a string to the terminal
+ * @str: the string to be printed
+ * Return: Void
  */
 
-int main(void)
+void _puts(char *str)
 {
-	char str[80];
+	int count;
 
-	strcpy(str, "\"Programming is like building a multilingual puzzle");
-	puts(str);
-
-	return (0);
+	count = 0;
+	while (str[count] != '\0')
+	{
+		_putchar(str[count]);
+		count++;
+	}
+	_putchar('\n');
 }
