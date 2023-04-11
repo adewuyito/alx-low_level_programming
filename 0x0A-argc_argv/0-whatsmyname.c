@@ -8,16 +8,9 @@
  * @argv: Pointer to array of arguments
  * Return: Success
  */
-int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
-	int i;
+	printf("%s\n", *argv);
 
-	i = 0;
-	for (; argv[0][i] != '\0'; i++)
-	{
-		printf("%c", argv[0][i]);
-	}
-	printf("\n");
-	(void)argc;
-	exit(EXIT_SUCCESS);
+	return (0);
 }

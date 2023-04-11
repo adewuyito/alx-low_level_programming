@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <ctype.h>
 #include "main.h"
 
-int sum_args(int argc, char *argv[]);
+int sum_args(char *str);
 /**
  * main - Entry point
  * @argc: No. of input argument
@@ -13,53 +14,48 @@ int sum_args(int argc, char *argv[]);
  */
 int main(int argc, char *argv[])
 {
+
+	int count;
+	int str_to_int;
 	int sum;
 
-	sum = sum_args(argc, argv);
-
-	if (argc == 1)
+	sum = 0;
+	count = 1;
+	while (count < argc)
 	{
-		printf("Error\n");
-		return (0);
+		if (sum_args(argv[count]))
+		{
+			str_to_int = atoi(argv[count]);
+			sum += str_to_int;
+		}
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
+		count++;
 	}
-	if (sum != 0)
-	{
-		printf("%d\n", sum);
-	}
+	printf("%d\n", sum);
 	return (0);
 }
-
 /**
  * sum_args - Sum int values in argv
- * @argc: No. of input argument
- * @argv: Pointer to array of input argument
+ * @str: No. of input argument
  *
  *  Return: sum
  */
-int sum_args(int argc, char *argv[])
+int sum_args(char *str)
 {
-	int sum, i;
+	unsigned int count;
 
-	sum = 0;
-	for (i = 1; i < argc; i++)
+	count = 0;
+	while (count < strlen(str))
 	{
-		int j;
-
-		j = 0;
-		while (argv[i][j] != '\0')
+		if (!isdigit(str[count]))
 		{
-			if (!isdigit(argv[i][j]))
-			{
-				printf("Error\n");
-
-				return (1);
-			}
-			j++;
+			return (0);
 		}
-
-		sum += atoi(argv[i]);
+		count++;
 	}
-
-	return (sum);
+	return (1);
 }
-
