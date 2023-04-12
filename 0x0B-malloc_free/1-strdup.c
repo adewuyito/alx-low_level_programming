@@ -14,17 +14,20 @@ char *_strdup(char *str)
 	unsigned int i;
 	char *final;
 
+	if (str == NULL) return (NULL);
 	size = strlen(str);
+	++size;
 	final = (char *)malloc(size * sizeof(char));
-	if (size == 0 || str == NULL || final == NULL)
+	if (final == NULL)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; i <= size; i++)
+	for (i = 0; i < size; i++)
 	{
 		final[i] = str[i];
 	}
+	final[-1] = '\0';
 
 	return (final);
 }
