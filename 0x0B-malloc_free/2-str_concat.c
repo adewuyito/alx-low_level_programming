@@ -17,12 +17,9 @@ char *str_concat(char *s1, char *s2)
 	size_t i;
 	size_t sum;
 
-	/*Length calculation*/
 	size1 = strlen(s1);
 	size2 = strlen(s2);
-
-	/*check*/
-	if (s1 == NULL )
+	if (s1 == NULL)
 	{
 		size1 = 1;
 	}
@@ -30,17 +27,12 @@ char *str_concat(char *s1, char *s2)
 	{
 		size2 = 1;
 	}
-
 	sum = size1 + size2;
 	locate = (char *)malloc((sum) * sizeof(char));
-
-	/*Malloc check*/
 	if (locate == NULL)
 	{
 		return (NULL);
 	}
-
-	/*Iteration Addition*/
 	for (i = 0; i < size1; i++)
 	{
 		locate[i] = s1[i];
@@ -50,6 +42,5 @@ char *str_concat(char *s1, char *s2)
 	{
 		locate[size1 + i] = s2[i];
 	}
-
 	return (locate);
 }
