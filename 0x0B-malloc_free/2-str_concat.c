@@ -21,11 +21,11 @@ char *str_concat(char *s1, char *s2)
 	size2 = strlen(s2);
 	if (s1 == NULL)
 	{
-		size1 = 1;
+		size1 = 0;
 	}
 	if (s2 == NULL)
 	{
-		size2 = 1;
+		size2 = 0;
 	}
 	sum = size1 + size2 + 1;
 	locate = (char *)malloc((sum) * sizeof(char));
