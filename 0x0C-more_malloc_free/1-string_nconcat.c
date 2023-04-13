@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include "main.h"
 
 /**
  * string_nconcat - Concats two strings to the nth byte
@@ -28,7 +29,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	size1 = strlen(s1);
 	size2 = strlen(s2);
 
-	if (n >= len2)
+	if (n >= size2)
 	{
 		n = size2;
 	}
