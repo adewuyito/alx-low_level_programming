@@ -12,16 +12,16 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int *mem_location;
 	size_t i;
+	unsigned int ammount;
 
 	if (nmemb == 0 || size == 0)
 	{
-		/*printf("Im not sure what this is");*/
 		return (NULL);
 	}
-	mem_location = malloc(nmemb * sizeof(size));
+	amount = nmemb * size;
+	mem_location = malloc(amount);
 	if (mem_location == NULL)
 	{
-		/*printf("memory failed");*/
 		return (NULL);
 	}
 	for (i = 0; i <= nmemb; i++)
