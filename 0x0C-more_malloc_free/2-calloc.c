@@ -12,7 +12,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int *mem_location;
 	size_t i;
-	unsigned int ammount;
+	unsigned int amount;
 
 	if (nmemb == 0 || size == 0)
 	{
