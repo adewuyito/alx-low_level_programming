@@ -13,7 +13,7 @@ int *array_range(int min, int max)
 {
 	int *mem_location;
 	int amount;
-	size_t i;
+	int i;
 
 	if (min > max)
 	{
@@ -25,11 +25,10 @@ int *array_range(int min, int max)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < max; i++)
+	for (i = 0; i <= max; i++)
 	{
 		mem_location[i] = min + i;
 	}
-	mem_location[-1] = '\0';
 
 	return (mem_location);
 }
