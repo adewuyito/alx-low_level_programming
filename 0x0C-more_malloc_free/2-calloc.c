@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * _calloc - Assigns memory like calloc
@@ -10,8 +11,7 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *mem_location;
-	size_t i;
+	void *mem_location;
 	unsigned int amount;
 
 	if (nmemb == 0 || size == 0)
@@ -24,10 +24,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
-	for (i = 0; i <= nmemb; i++)
-	{
-		mem_location[i] = 0;
-	}
+	memset(mem_location, 0, amount);
 
 	return (mem_location);
 }
