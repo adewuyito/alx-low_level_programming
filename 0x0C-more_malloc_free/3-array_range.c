@@ -7,7 +7,7 @@
  * @min: The minimum value for the array.
  * @max: The maximum value for the array.
  *
- * Return: A pointer to the newly created array, or NULL if min > max or if malloc fails.
+ * Return: A pointer to the newly created array, or NULL if min.
  */
 int *array_range(int min, int max)
 {
@@ -20,14 +20,14 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 	amount = max - min + 1;
-	mem_location = malloc(amount * sizeof(max));
+	mem_location = malloc(amount * sizeof(int));
 	if (mem_location == NULL)
 	{
 		return (NULL);
 	}
 	for (i = 0; i <= max; i++)
 	{
-		mem_location[i] = min + i;
+		mem_location[i] = min++;
 	}
 
 	return (mem_location);
