@@ -12,8 +12,8 @@ size_t print_listint(const listint_t *h)
 
 	for (; h != NULL; h = h->next)
 	{
-        count++;
-		printf("%u\n", h->n);
+		count++;
+		printf("%d\n", h->n);
 	}
 
 	return (count);
