@@ -1,26 +1,38 @@
 #include "lists.h"
 
 /**
- * print_listint - Prints a linked-list
- * @h: A pointer to the head of the list
+ * delete_nodeint_at_index - Delete a node at index of a linked list
+ * @head: A pointer to the head of the list
+ * @index: The index of the node
  *
- * Return: The number of nodes printed
+ * Return: (1) if successful or (-1) otherwise
  */
-size_t print_listint(const listint_t *h)
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	size_t count = 0;
+	listint_t *temp;
+	listint_t *tempNext = NULL;
+	unsigned int count;
 
-	if (h == NULL)
+	for (count = 0, temp = *head; temp != NULL && count < index; count++)
 	{
-		return (0);
+		tempNext = temp;
+		temp = temp->next;
 	}
-	while (h != NULL)
+	if (temp == NULL)
 	{
-		printf("%d \n", h->n);
-		h = h->next;
-		count++;
+		return (-1);
 	}
+	if (index == 0)
+	{
+		*head = (*head)->next;
+	}
+	else
+	{
 
-	return (count);
+		tempNext->next = temp->next;
+	}
+	free(temp);
+
+	return (1);
 }
 
