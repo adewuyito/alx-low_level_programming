@@ -1,33 +1,41 @@
 #include "main.h"
 
-int get_bit(unsigned long int n, unsigned int find) {
-  int foundBit;
-  int binary[33];
-  unsigned long int decimal = n;
-  int index = 0;
+/**
+ * get_bit - get the bit at an index
+ * @n: the int number
+ * @find: The index in number
+ * return: the bit
+ */
+int get_bit(unsigned long int n, unsigned int find)
+{
+	int binary[16] = {0};
+	unsigned long int num = n;
+	int msb_found = 0;
 
-  if (find < 0) 
-  {
-    return (-1);
-  }
-  for (int i = 0; i < sizeof(binary) / sizeof(int); i++)
-  {
-    binary[i] = -1;
-  }
-  if (decimal == 0)
-  {
-    binary[index++] = 0;
-  }
-  else
-  {
-    while (decimal > 0) {
-      binary[index++] = (decimal % 2);
-      decimal = decimal / 2;
-    }
-  }
+	if (find > 16 || find < 0)
+	{
+		exit(1);
+	}
+	if (num != 0)
+	{
+		for (int i = 16; i >= 0; i--)
+		{
+			int mask = (1 << i);
 
-  binary[index] = '\0';
-  foundBit = binary[find];
-
-  return (foundBit);
+			if (num & mask)
+			{
+				binary[i] = 1;
+				msb_found = 1;
+			}
+			else if (msb_found || num == 0)
+			{
+				binary[i] = 0;
+			}
+		}
+	}
+	else
+	{
+		binary[0] = 0;
+	}
+	return (binary[find]);
 }
