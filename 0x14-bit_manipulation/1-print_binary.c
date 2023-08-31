@@ -18,12 +18,12 @@ void print_binary(unsigned long int n)
 
 			if (num & mask)
 			{
-				putchar('1');
+				_putchar('1');
 				msb_found = 1;
 			}
 			else if (msb_found || num == 0)
 			{
-				putchar('0');
+				_putchar('0');
 			}
 		}
 	}
