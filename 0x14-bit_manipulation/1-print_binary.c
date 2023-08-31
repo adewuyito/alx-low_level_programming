@@ -9,10 +9,11 @@ void print_binary(unsigned long int n)
 {
 	unsigned long int num = n;
 	int msb_found = 0;
+	int i;
 
 	if (num != 0)
 	{
-		for (int i = 16; i >= 0; i--)
+		for (i = 16; i >= 0; i--)
 		{
 			int mask = (1 << i);
 

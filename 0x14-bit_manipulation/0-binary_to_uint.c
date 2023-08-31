@@ -9,12 +9,13 @@
 unsigned int binary_to_uint(const char *string)
 {
 	unsigned int final = 0;
+	int i;
 
 	if (string == NULL)
 	{
 		return (0);
 	}
-	for (int i = 0; string[i] != '\0'; i++)
+	for (i = 0; string[i] != '\0'; i++)
 	{
 		char letter = string[i];
 

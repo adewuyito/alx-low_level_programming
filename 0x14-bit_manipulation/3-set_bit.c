@@ -9,5 +9,6 @@
 int set_bit(unsigned long int *n, unsigned int find)
 {
 	int mask = 1 << find;
-	return *n | mask;
+
+	return (*n | mask);
 }

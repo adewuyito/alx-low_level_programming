@@ -13,8 +13,9 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	int binary1[16] = {0};
 	int binary2[16] = {0};
 	int running_amount = 0;
+	int i;
 
-	for (int i = 16; i >= 0; i--)
+	for (i = 16; i >= 0; i--)
 	{
 		int mask = (1 << i);
 

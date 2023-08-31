@@ -11,14 +11,15 @@ int get_bit(unsigned long int n, unsigned int find)
 	int binary[16] = {0};
 	unsigned long int num = n;
 	int msb_found = 0;
+	int i;
 
-	if (find > 16 || find < 0)
+	if (find > 16)
 	{
 		exit(1);
 	}
 	if (num != 0)
 	{
-		for (int i = 16; i >= 0; i--)
+		for (i = 16; i >= 0; i--)
 		{
 			int mask = (1 << i);
 

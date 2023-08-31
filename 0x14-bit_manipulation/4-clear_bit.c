@@ -8,6 +8,9 @@
  */
 int clear_bit(unsigned long int *n, unsigned int find)
 {
-	int mask = ~(1 << find);
-	return *n & mask;
+	int mask;
+
+	mask = ~(1 << find);
+
+	return (*n & mask);
 }
