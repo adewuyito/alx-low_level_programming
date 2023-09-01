@@ -12,8 +12,9 @@ int clear_bit(unsigned long int *n, unsigned int find)
     {
         return (-1);
     }
-    
+
     *n = *n & ~(1 << find);
 
     return (1);
+    
 }
