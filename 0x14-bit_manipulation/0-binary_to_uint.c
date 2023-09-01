@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * binary_to_uint - converts binary to int
  * @string: The binary value
@@ -19,7 +18,7 @@ unsigned int binary_to_uint(const char *string)
 	{
 		char letter = string[i];
 
-		if (letter != 48 || letter != 49)
+		if (!isdigit(letter))
 		{
 			return (0);
 		}
