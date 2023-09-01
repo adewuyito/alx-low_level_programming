@@ -8,9 +8,12 @@
  */
 int clear_bit(unsigned long int *n, unsigned int find)
 {
-	int mask;
+    if (find > 63)
+    {
+        return (-1);
+    }
+    
+    *n = *n & ~(1 << find);
 
-	mask = ~(1 << find);
-
-	return (*n & mask);
+    return (1);
 }
