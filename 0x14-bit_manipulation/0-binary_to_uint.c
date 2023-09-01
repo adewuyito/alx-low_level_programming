@@ -1,5 +1,5 @@
 #include "main.h"
-#include <ctype.h>
+
 
 /**
  * binary_to_uint - converts binary to int
