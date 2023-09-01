@@ -19,7 +19,7 @@ unsigned int binary_to_uint(const char *string)
 	{
 		char letter = string[i];
 
-		if (!isdigit(letter))
+		if (letter != 48 || letter != 49)
 		{
 			return (0);
 		}
