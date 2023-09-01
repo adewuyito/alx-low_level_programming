@@ -13,9 +13,9 @@ int get_bit(unsigned long int n, unsigned int find)
     int msb_found = 0;
     int i;
 
-    if (find > 16)
+    if (find > 16 || num == NULL)
     {
-        exit(1);
+        return (-1);
     }
 
     for (i = 16; i >= 0; i--)
