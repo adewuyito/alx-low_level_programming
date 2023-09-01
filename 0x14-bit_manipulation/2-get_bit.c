@@ -8,8 +8,5 @@
  */
 int get_bit(unsigned long int n, unsigned int find)
 {
-	if (n & (1 << find))
-		return (1);
-	else
-		return (0);
+	return ((n >> find) & 1);
 }
