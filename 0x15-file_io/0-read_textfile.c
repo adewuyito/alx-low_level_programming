@@ -12,43 +12,43 @@
  */
 size_t read_textfile(const char *filename, size_t letters)
 {
-    if (filename == NULL)
-    {
-        return (0);
-    }
+	FILE *fp;
+	char *buf;
+	size_t index = 0;
+	int c;
+	size_t i;
 
-    FILE *fp;
-    char *buf;
-    size_t index = 0;
-    int c;
+	if (filename == NULL)
+	{
+		return (0);
+	}
+	fp = fopen(filename, "r");
+	if (fp == NULL)
+	{
+		perror("Error opening file");
+		return (0);
+	}
 
-    fp = fopen(filename, "r");
-    if (fp == NULL)
-    {
-        perror("Error opening file");
-        return (size_t)-1;
-    }
+	buf = malloc(sizeof(char) * letters);
+	if (buf == NULL)
+	{
+		fclose(fp);
+		return (0);
+	}
 
-    buf = malloc(sizeof(char) * letters);
-    if (buf == NULL)
-    {
-        fclose(fp);
-        return (0);
-    }
+	while ((index < letters) && ((c = fgetc(fp)) != EOF))
+	{
+		buf[index] = (char)c;
+		index++;
+	}
 
-    while ((index < letters) && ((c = fgetc(fp)) != EOF))
-    {
-        buf[index] = (char)c;
-        index++;
-    }
+	for (i = 0; i < index; i++)
+	{
+		_putchar(buf[i]);
+	}
 
-    for (size_t i = 0; i < index; i++)
-    {
-        _putchar(buf[i]);
-    }
+	free(buf);
+	fclose(fp);
 
-    free(buf);
-    fclose(fp);
-
-    return index;
+	return (index);
 }
