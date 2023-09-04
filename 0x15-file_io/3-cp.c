@@ -1,10 +1,9 @@
 #include "main.h"
 
-
 /**
- * copy_file - copies the contents of one file to another
- * @src: source file
- * @dest: destination file
+ * main - copies the contents of one file to another
+ * @ac: number of arguments
+ * @av: array of arguments
  * Return: 1 on success, -1 on failure
  */
 int main(int ac, char **av)
@@ -18,19 +17,15 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
 	src = fopen(av[1], "r");
 	if (src == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-
 	dest = fopen(av[2], "w+");
 	if (dest == NULL)
-	{
 		exit(99);
-	}
 
 	buf = malloc(sizeof(char) * 1024);
 	if (buf == NULL)
