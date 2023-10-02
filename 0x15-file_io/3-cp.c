@@ -8,10 +8,9 @@
  */
 int main(int ac, char **av)
 {
-	FILE *src, *dest;
+	FILE *src, *dest, *files[2];
 	char *buf;
 	size_t length;
-	FILE *files[] = {src, dest};
 
 	if (ac != 3)
 	{
@@ -19,12 +18,15 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	src = fopen(av[1], "r");
+	dest = fopen(av[2], "w+");
+
+	files[0] = src;
+	files[1] = dest;
 	if (src == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	dest = fopen(av[2], "w+");
 	buf = malloc(sizeof(char) * 1024);
 	if (buf == NULL || dest == NULL)
 	{
@@ -45,7 +47,6 @@ int main(int ac, char **av)
 	}
 	free(buf);
 	closeFiles(files, 2);
-
 	return (0);
 }
 
