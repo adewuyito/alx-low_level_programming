@@ -7,13 +7,14 @@
  *
  * Return: actual number of letters it could read and print, 0 if:
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+ssize_t read_textfile(const char * filename, size_t letters)
 {
 	FILE *fp;
 	char *buf;
 	size_t index = 0;
 	int c;
 	size_t i;
+	size_t file_len = 0;
 
 	if (filename == NULL)
 	{
@@ -24,6 +25,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
+
+	fseek(fp, 0, SEEK_END);
+	file_len = ftell(fp);
+	rewind(fp);
+
+	if (letters > file_len)
+		letters = file_len;
 
 	buf = malloc(sizeof(char) * letters);
 	if (buf == NULL)
