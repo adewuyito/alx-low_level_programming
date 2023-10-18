@@ -6,7 +6,9 @@
  * @find: The index in number
  * Return: the bit
  */
-int get_bit(unsigned long int n, unsigned int find)
+int get_bit(unsigned long int n, unsigned int index)
 {
-	return ((n >> find) & 1);
+    if (index >= (sizeof(unsigned long int) * 8))
+        return (-1);
+    return ((n >> index) & 1);
 }
