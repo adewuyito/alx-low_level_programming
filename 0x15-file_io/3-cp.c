@@ -6,6 +6,8 @@
  * @av: array of arguments
  * Return: 1 on success, -1 on failure
  */
+#include <sys/stat.h>
+
 int main(int ac, char **av)
 {
 	FILE *src, *dest, *files[2];
@@ -47,6 +49,13 @@ int main(int ac, char **av)
 	}
 	free(buf);
 	closeFiles(files, 2);
+
+	if (chmod(av[2], S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH) != 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99);
+	}
+
 	return (0);
 }
 
